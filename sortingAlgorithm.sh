@@ -5,7 +5,7 @@ function resDescending(){
    do
       for (( j=1;j<=4;j++ ))
       do
-         if [ ${array[$i]} -gt ${array[$j]} ]
+         if [ ${array[$i]} -lt ${array[$j]} ]
          then
             temp=${array[$i]};
             array[$i]=${array[$j]};
@@ -31,5 +31,5 @@ do
 done
 
 #Function call
-resDescending 
+resDescending
 echo "${array[@]}"
