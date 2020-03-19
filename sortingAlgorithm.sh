@@ -1,3 +1,5 @@
 #!/bin/bash -x
 
-echo "Welcome to sorting algorithm"
+read -p "Enter a :" num1
+read -p "Enter b :" num2
+read -p "Enter c :"num3
