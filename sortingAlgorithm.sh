@@ -4,14 +4,18 @@ read -p "Enter a :" num1
 read -p "Enter b :" num2
 read -p "Enter c :" num3
 
-echo "expression 1 :"
+declare -A resultArray
 result=$(( $num1 + $num2 * $num3));
+resultArray[exp1]=$result;
 
-echo "expression 2 :"
 result=$(($num1*$num2+$num3));
+resultArray[exp2]=$result;
 
-echo "expression 3 : "
 result=$(($num3+$num1/$num2));
+resultArray[exp3]=$result;
 
-echo "expression 4 :"
 result=$(($num1%$num2+$num3));
+resultArray[exp4]=$result;
+
+echo "${!resultArray[@]}"
+echo "${resultArray[@]}"
