@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-function resDescending(){
+function resAscending(){
    for (( i=1;i<=4;i++ ))
    do
       for (( j=1;j<=4;j++ ))
@@ -31,5 +31,5 @@ do
 done
 
 #Function call
-resDescending
+resAscending
 echo "${array[@]}"
