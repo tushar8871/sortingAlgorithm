@@ -5,4 +5,7 @@ read -p "Enter b :" num2
 read -p "Enter c :" num3
 
 result=$(( $num1 + $num2 * $num3));
-echo "$result"
+echo "expression 1 : $result"
+
+result=$(($num1*$num2+$num3));
+echo "expression 2 : $result"
