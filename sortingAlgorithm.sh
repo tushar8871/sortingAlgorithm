@@ -5,17 +5,13 @@ read -p "Enter b :" num2
 read -p "Enter c :" num3
 
 declare -A resultArray
-result=$(( $num1 + $num2 * $num3));
-resultArray[exp1]=$result;
+resultArray[exp1]=$(( $num1 + $num2 * $num3));
+resultArray[exp2]=$(($num1*$num2+$num3));
+resultArray[exp3]=$(($num3+$num1/$num2));
+resultArray[exp4]=$(($num1%$num2+$num3));
 
-result=$(($num1*$num2+$num3));
-resultArray[exp2]=$result;
+for (( i=1;i<=4;i++ ))
+do
+	eval array[$i]=${resultArray[exp$i]};
+done
 
-result=$(($num3+$num1/$num2));
-resultArray[exp3]=$result;
-
-result=$(($num1%$num2+$num3));
-resultArray[exp4]=$result;
-
-echo "${!resultArray[@]}"
-echo "${resultArray[@]}"
