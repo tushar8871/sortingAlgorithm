@@ -15,6 +15,22 @@ function resAscending(){
    done
 }
 
+function resDescending(){
+   for (( i=1;i<=4;i++ ))
+   do
+      for (( j=1;j<=4;j++ ))
+      do
+         if [ ${array[$i]} -gt ${array[$j]} ]
+         then
+            temp=${array[$i]};
+            array[$i]=${array[$j]};
+            array[$j]=$temp;
+         fi
+      done
+   done
+}
+
+
 read -p "Enter a :" num1
 read -p "Enter b :" num2
 read -p "Enter c :" num3
@@ -32,4 +48,6 @@ done
 
 #Function call
 resAscending
+echo "${array[@]}"
+resDescending
 echo "${array[@]}"
